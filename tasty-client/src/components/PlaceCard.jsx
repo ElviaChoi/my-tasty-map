@@ -3,7 +3,7 @@ const PlaceCard = ({ title, image }) => {
     <div className="w-48 rounded-md overflow-hidden shadow border">
       <img
         src={`http://localhost:3000/${image.src}`}
-        alt={title}
+        alt={image.alt}
         className="w-full h-32 object-cover"
       />
       <div className="bg-gray-100 text-center py-2 text-sm font-medium">
