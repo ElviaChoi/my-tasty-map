@@ -1,10 +1,12 @@
-import { useState } from "react";
-import "./App.css";
+import MainPage from "./pages/MainPage";
+import "./style.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  return (
+    <div className="bg-gray-100">
+      <MainPage />
+    </div>
+  );
 }
 
 export default App;

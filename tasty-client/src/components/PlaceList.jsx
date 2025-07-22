@@ -6,7 +6,10 @@ const PlaceList = () => {
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
-    getPlaces().then(setPlaces);
+    getPlaces().then((data) => {
+      console.log("받은 데이터:", data);
+      setPlaces(data.places);
+    });
   }, []);
 
   return (
