@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getPlaces } from "../api/getPlaces";
+import { getPlaces } from "../api/index";
 import PlaceCard from "./PlaceCard";
 
 const PlaceList = () => {
