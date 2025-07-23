@@ -1,20 +1,14 @@
 import PlaceList from "../components/PlaceList";
+import PlaceSection from "../components/PlaceSection";
 
 function MainPage() {
   return (
     <div className="p-8">
-      <section className="mb-12">
-        <h2 className="text-xl font-semibold mb-4 text-center text-gray-800">
-          찜한 맛집
-        </h2>
-      </section>
+      <PlaceSection title="찜한 맛집"></PlaceSection>
 
-      <section>
-        <h2 className="text-xl font-semibold mb-4 text-center text-gray-800">
-          맛집 목록
-        </h2>
+      <PlaceSection title="맛집 목록">
         <PlaceList />
-      </section>
+      </PlaceSection>
     </div>
   );
 }
