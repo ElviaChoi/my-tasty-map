@@ -1,12 +1,12 @@
 import axios from "axios";
 
-export const getPlaces = async () => {
+export const getPlaces = async ({ signal }) => {
   try {
-    const res = await axios.get("http://localhost:3000/places");
+    const res = await axios.get("http://localhost:3000/places", { signal });
     return res.data;
   } catch (err) {
     console.error("API 호출 에러:", err);
-    return [];
+    throw err;
   }
 };
 
