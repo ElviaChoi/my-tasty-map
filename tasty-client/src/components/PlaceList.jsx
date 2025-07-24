@@ -16,7 +16,7 @@ const PlaceList = () => {
         setPlaces(data.places);
       } catch (err) {
         console.error("에러 발생:", err);
-        setError("데이터를 불러오는 데 실패했습니다.");
+        setError(err.message);
       } finally {
         setLoading(false);
       }
@@ -26,7 +26,11 @@ const PlaceList = () => {
   }, []);
 
   if (error) {
-    return <p className="text-red-400 text-center">{error}</p>;
+    return (
+      <p className="bg-red-200 text-red-900 p-4 text-center font-semibold">
+        {error}
+      </p>
+    );
   }
 
   if (loading) {
