@@ -1,7 +1,7 @@
 import PlaceList from "../components/PlaceList";
 import PlaceSection from "../components/PlaceSection";
 
-function MainPage() {
+const MainPage = () => {
   return (
     <div className="p-8">
       <PlaceSection title="찜한 맛집"></PlaceSection>
@@ -11,6 +11,6 @@ function MainPage() {
       </PlaceSection>
     </div>
   );
-}
+};
 
 export default MainPage;
