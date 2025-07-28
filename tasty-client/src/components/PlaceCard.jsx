@@ -6,7 +6,7 @@ const PlaceCard = ({ title, image }) => {
         alt={image.alt}
         className="w-full h-32 object-cover"
       />
-      <div className="bg-gray-100 text-center py-2 text-sm font-medium">
+      <div className="bg-gray-500 text-center py-2 text-sm font-medium">
         {title}
       </div>
     </div>
