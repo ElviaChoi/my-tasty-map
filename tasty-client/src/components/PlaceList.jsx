@@ -12,22 +12,20 @@ const PlaceList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!location) return;
+
     const fetchPlaces = async () => {
       try {
         setLoading(true);
         setError(null);
         const data = await getPlaces();
 
-        if (location) {
-          const sorted = sortPlacesByDistance(
-            data.places,
-            location.lat,
-            location.lon
-          );
-          setPlaces(sorted);
-        } else {
-          setPlaces(data.places);
-        }
+        const sorted = sortPlacesByDistance(
+          data.places,
+          location.lat,
+          location.lon
+        );
+        setPlaces(sorted);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -38,10 +36,10 @@ const PlaceList = () => {
     fetchPlaces();
   }, [location]);
 
-  if (error || locationError) {
+  if (error) {
     return (
       <p className="bg-red-200 text-red-900 p-4 text-center font-semibold">
-        {error || locationError}
+        {error}
       </p>
     );
   }
@@ -53,10 +51,18 @@ const PlaceList = () => {
   }
 
   return (
-    <div className="flex flex-wrap gap-4 justify-center">
-      {places.map((p) => (
-        <PlaceCard key={p.id} title={p.title} image={p.image} />
-      ))}
+    <div className="p-4">
+      {locationError && (
+        <p className="text-sm text-center text-gray-500 mb-4">
+          {locationError}
+        </p>
+      )}
+
+      <div className="flex flex-wrap gap-4 justify-center">
+        {places.map((p) => (
+          <PlaceCard key={p.id} title={p.title} image={p.image} />
+        ))}
+      </div>
     </div>
   );
 };
