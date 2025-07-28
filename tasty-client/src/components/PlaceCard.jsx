@@ -1,4 +1,4 @@
-const PlaceCard = ({ title, image, onSaveClick }) => {
+const PlaceCard = ({ title, image, onSaveClick, onDeleteClick }) => {
   return (
     <div className="w-48 rounded-md overflow-hidden shadow border relative bg-white">
       <img
@@ -16,6 +16,15 @@ const PlaceCard = ({ title, image, onSaveClick }) => {
           className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white text-xs px-2 py-1 rounded"
         >
           찜하기
+        </button>
+      )}
+
+      {onDeleteClick && (
+        <button
+          onClick={onDeleteClick}
+          className="absolute top-2 right-2 bg-gray-200 text-indigo-900 text-xs px-2 py-1 rounded"
+        >
+          삭제
         </button>
       )}
     </div>

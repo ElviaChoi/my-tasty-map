@@ -42,3 +42,12 @@ export const addToSavedPlaces = async (place) => {
     throw err;
   }
 };
+
+export const deleteSavedPlace = async (id) => {
+  try {
+    await axios.delete(`http://localhost:3000/users/places/${id}`);
+  } catch (err) {
+    console.error("맛집 삭제 실패:", err);
+    throw err;
+  }
+};
