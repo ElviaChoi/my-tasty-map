@@ -30,3 +30,15 @@ export const getSavedPlaces = async () => {
     return [];
   }
 };
+
+export const addToSavedPlaces = async (place) => {
+  try {
+    const res = await axios.post("http://localhost:3000/users/places", {
+      place,
+    });
+    return res.data;
+  } catch (err) {
+    console.error("찜 저장 실패:", err);
+    throw err;
+  }
+};
