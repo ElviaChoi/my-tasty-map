@@ -7,7 +7,7 @@ export const useGeoLocation = () => {
   useEffect(() => {
     if (!navigator.geolocation) {
       setError("위치 정보를 지원하지 않는 브라우저입니다.");
-      setLocation({ lat: 37.4979, lon: 127.0276 }); // 강남역 기준
+      setLocation({ lat: 37.4979, lon: 127.0276 });
       return;
     }
 
