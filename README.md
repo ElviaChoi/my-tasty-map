@@ -1,7 +1,7 @@
 # 나만의 맛집 프로젝트 🍜
 
 > 프론트엔드 개발 학습을 위한 React 기반 웹앱입니다.  
-> 백엔드 API를 활용해 맛집 목록을 불러오고, 찜하기, 사용자 위치 기반 거리 정렬 등의 기능을 구현했습니다.
+> MSW(Mock Service Worker)를 활용해 API를 모킹하고, 맛집 목록 조회, 찜하기, 거리 기반 정렬 등의 기능을 구현했습니다.
 
 ## ✨ 라이브 데모
 
@@ -63,31 +63,35 @@ tasty-client/
 
 ## 🚀 실행 방법
 
-1. **백엔드 서버 실행**
+1. **프론트엔드 실행 (권장)**
 
-```bash
-# eatingMark-BE/ 디렉토리로 이동
-cd eatingMark-BE
+   > MSW를 통해 API가 모킹되어 있으므로, 프론트엔드 서버만 실행해도 모든 기능을 확인할 수 있습니다.
 
-# 의존성 설치
-npm install
+   ```bash
+   # tasty-client/ 디렉토리로 이동
+   cd tasty-client
 
-# 서버 실행
-node app.js
-```
+   # 의존성 설치
+   npm install
 
-2. **프론트엔드 실행**
+   # 개발 서버 실행
+   npm run dev
+   ```
 
-```bash
-# tasty-client/ 디렉토리로 이동
-cd tasty-client
+2. **백엔드 서버 실행 (선택 사항)**
 
-# 의존성 설치
-npm install
+   > 실제 백엔드 서버와 연동하여 테스트하고 싶을 경우에만 실행합니다.
 
-# 개발 서버 실행
-npm run dev
-```
+   ```bash
+   # eatingMark-BE/ 디렉토리로 이동
+   cd eatingMark-BE
+
+   # 의존성 설치
+   npm install
+
+   # 서버 실행
+   node app.js
+   ```
 
 ---
 
@@ -102,7 +106,7 @@ npm run dev
 ## 🙋‍♀️ 개발자 역할
 
 - 프론트엔드 전반 구현 담당
-- 백엔드 API는 강의에서 제공된 Node.js 기반 서버 사용
+- 초기에는 강의에서 제공된 Node.js 서버를 활용했으나, 이후 MSW를 도입하여 API를 모킹하고 독립적인 프론트엔드 개발 및 배포 환경 구축
 - API 호출, 상태 관리, UI 컴포넌트 분리 및 거리 정렬 로직 구현
 
 ---
@@ -111,4 +115,4 @@ npm run dev
 
 - 거리 계산: `utils/loc.js`에 Haversine 공식 적용
 - 위치 정보: 브라우저 `navigator.geolocation` API 사용
-- API Mocking: `msw`를 사용하여 Vercel 배포 환경에서 백엔드 API를 모킹
+- API Mocking: `msw`를 사용하여 로컬 개발 및 Vercel 배포 환경에서 백엔드 API를 모킹
