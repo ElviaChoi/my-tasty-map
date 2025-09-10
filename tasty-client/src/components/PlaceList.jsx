@@ -1,23 +1,14 @@
 import { useEffect, useState } from "react";
-import { getPlaces, addToSavedPlaces } from "../api/index";
+import { getPlaces } from "../api/index";
 import { sortPlacesByDistance } from "../utils/loc";
 import { useGeoLocation } from "../hooks/useGeoLocation";
 import PlaceCard from "./PlaceCard";
 
-const PlaceList = () => {
+const PlaceList = ({ onSave }) => {
   const { location, error: locationError } = useGeoLocation();
   const [places, setPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const handlePlaceClick = async (place) => {
-    try {
-      await addToSavedPlaces(place);
-      alert("찜한 맛집으로 저장되었습니다!");
-    } catch (err) {
-      alert("찜하기에 실패했습니다.");
-    }
-  };
 
   useEffect(() => {
     if (!location) return;
@@ -71,7 +62,7 @@ const PlaceList = () => {
             key={p.id}
             title={p.title}
             image={p.image}
-            onSaveClick={() => handlePlaceClick(p)}
+            onSaveClick={() => onSave(p)}
           />
         ))}
       </div>
