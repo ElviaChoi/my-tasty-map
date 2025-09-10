@@ -35,7 +35,6 @@
 tasty-client/
 ├── src/
 │   ├── api/             # API 요청 함수
-│   ├── assets/          # 정적 에셋
 │   ├── components/      # UI 컴포넌트
 │   │   ├── PlaceCard.jsx
 │   │   ├── PlaceList.jsx
