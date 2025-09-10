@@ -7,6 +7,10 @@
 
 **배포 주소:** [https://my-tasty-map.vercel.app/](https://my-tasty-map.vercel.app/)
 
+## 📸 스크린샷
+
+![나만의 맛집 스크린샷](./tasty-client/public/images/나만의맛집.png)
+
 ---
 
 ## 📌 주요 기능
@@ -21,15 +25,15 @@
 
 ## 🛠️ 기술 스택
 
-| 영역         | 사용 기술                   |
-| ------------ | --------------------------- |
-| 프레임워크   | React (Vite 기반)           |
-| 스타일링     | Tailwind CSS                |
-| HTTP 통신    | Axios                       |
-| API Mocking  | MSW (Mock Service Worker)   |
-| 상태 관리    | useState, useEffect         |
-| API 서버     | Node.js + Express           |
-| 배포         | Vercel                      |
+| 영역        | 사용 기술                 |
+| ----------- | ------------------------- |
+| 프레임워크  | React (Vite 기반)         |
+| 스타일링    | Tailwind CSS              |
+| HTTP 통신   | Axios                     |
+| API Mocking | MSW (Mock Service Worker) |
+| 상태 관리   | useState, useEffect       |
+| API 서버    | Node.js + Express         |
+| 배포        | Vercel                    |
 
 ---
 
