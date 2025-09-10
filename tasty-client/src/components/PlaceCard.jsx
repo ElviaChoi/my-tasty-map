@@ -2,8 +2,8 @@ const PlaceCard = ({ title, image, onSaveClick, onDeleteClick }) => {
   return (
     <div className="w-48 rounded-md overflow-hidden shadow border relative bg-white">
       <img
-        src={`http://localhost:3000/${image.src}`}
-        alt={image.alt}
+        src={image?.src}
+        alt={image?.alt || title}
         className="w-full h-32 object-cover"
       />
       <div className="bg-gray-500 text-center py-2 text-sm font-medium text-white">
